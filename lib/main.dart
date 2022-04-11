@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
     final json={
       'name' : 'Pratham Koya',
       'Roll' : 'Group Leader'
+
     };
 
     docUser.set(json);
