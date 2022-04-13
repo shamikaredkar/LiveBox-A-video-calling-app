@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -19,17 +17,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    final docUser = FirebaseFirestore.instance.collection("users").doc('my-id');
-
-    final json={
-      'name' : 'Pratham Koya',
-      'Roll' : 'Group Leader'
-
-    };
-
-    docUser.set(json);
 
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Startup Name Generator',
         home: Scaffold(
           appBar: AppBar(
