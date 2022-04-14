@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videocalling_finalproject/screens/history_meetings_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
 import 'package:videocalling_finalproject/widgets/home_meeting_button.dart';
 
@@ -17,6 +18,9 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  List<Widget> pages = [
+    const HistoryMeetingScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,35 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("Meet & Chat"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                HomeMeetingButton(onPressed: (){},
-                  text: 'New Meeting',
-                  icon: Icons.videocam,
-                ),
-                HomeMeetingButton(onPressed: (){},
-                  text: 'Join Meeting',
-                  icon: Icons.add_box_rounded,
-                ),
-                HomeMeetingButton(onPressed: (){},
-                  text: 'Schedule',
-                  icon: Icons.calendar_today,
-                ),
-                HomeMeetingButton(onPressed: (){},
-                  text: 'Share Screen',
-                  icon: Icons.arrow_upward,
-                )
-              ],
-            ),
-          const Expanded(child: Center(child: Text('Create/Host Meetings with just a click', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-          ),
-          ),
-          ),
-        ],
-      ),
+      body: pages[_page],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: footerColor,
         onTap: onPageChanged,
@@ -79,3 +55,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
