@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
+import 'package:videocalling_finalproject/widgets/home_meeting_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +28,27 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
-
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                HomeMeetingButton(onPressed: (){},
+                  text: 'New Meeting',
+                  icon: Icons.videocam,
+                ),
+                HomeMeetingButton(onPressed: (){},
+                  text: 'Join Meeting',
+                  icon: Icons.add_box_rounded,
+                ),
+                HomeMeetingButton(onPressed: (){},
+                  text: 'Schedule',
+                  icon: Icons.calendar_today,
+                ),
+                HomeMeetingButton(onPressed: (){},
+                  text: 'Share Screen',
+                  icon: Icons.arrow_upward,
+                )
+              ],
+            ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
