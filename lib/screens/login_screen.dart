@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videocalling_finalproject/resources/auth_methods.dart';
 import 'package:videocalling_finalproject/widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,6 +10,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+   final AuthMethods _authMethods = AuthMethods();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,8 +25,9 @@ class _LoginScreenState extends State<LoginScreen> {
           Padding(padding: const EdgeInsets.symmetric(vertical: 28.0),
               child: Image.asset('assets/images/onboarding.jpg'),
           ),
-          CustomButton(text: 'Google SignIn',onPressed: (){
-
+          CustomButton(text: 'Google SignIn',onPressed: ()async{
+             _authMethods.signInWithGoogle(context);
+              Navigator.pushNamed(context, '/home');
           },),
         ],
       ) ,

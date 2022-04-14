@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>591272776906-qilf5mc0vi8vg2jjbvke1uatrv2hb695.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.591272776906-qilf5mc0vi8vg2jjbvke1uatrv2hb695</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>591272776906-519lhfond60l83n5ifss1q3ibdn82q0n.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDinZCBZMZ07yLUmkpb4Pt8G1hhaq9y8XU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>591272776906</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.videocallingFlutter</string>
+	<key>PROJECT_ID</key>
+	<string>videocalling-application</string>
+	<key>STORAGE_BUCKET</key>
+	<string>videocalling-application.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:591272776906:ios:2e63aa4f07d2ae1718d033</string>
+</dict>
+</plist>

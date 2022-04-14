@@ -1,9 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:videocalling_finalproject/screens/home_screen.dart';
 import 'package:videocalling_finalproject/screens/login_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
 
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -25,6 +29,7 @@ class _MyAppState extends State<MyApp> {
         title: 'Flutter Video Call',
         routes:{
           '/login' : (context) => const LoginScreen(),
+          '/home' : (context) => const HomeScreen(),
         },
         home: const LoginScreen(),
     );
