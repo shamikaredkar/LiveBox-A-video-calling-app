@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:videocalling_finalproject/resources/auth_methods.dart';
+import 'package:videocalling_finalproject/resources/jitsi_meet_methods.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
+
+import '../widgets/meeting_option.dart';
 
 class VideoCallScreen extends StatefulWidget {
   const VideoCallScreen({Key? key}) : super(key: key);
@@ -13,6 +17,10 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
   final AuthMethods _authMethods = AuthMethods();
   late TextEditingController meetingIdController;
   late TextEditingController nameController;
+  final JitsiMeetMethods _jitsiMeetMethods = JitsiMeetMethods();
+  bool isAudioMuted = true;
+  bool isVideoMuted = true;
+
   @override
   void initState() {
     meetingIdController = TextEditingController();
@@ -22,8 +30,22 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
     super.initState();
 
   }
-  _joinMeeting(){
 
+  @override
+  void dispose() {
+    super.dispose();
+    meetingIdController.dispose();
+    nameController.dispose();
+    JitsiMeet.removeAllListeners();
+  }
+
+  _joinMeeting() {
+    _jitsiMeetMethods.createMeeting(
+      roomName: meetingIdController.text,
+      isAudioMuted: isAudioMuted,
+      isVideoMuted: isVideoMuted,
+      username: nameController.text,
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -84,7 +106,31 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
               ),
             ),
           ),
+          const SizedBox(height: 20),
+          MeetingOption(
+            text: 'Mute Audio',
+            isMute: isAudioMuted,
+            onChange: onAudioMuted,
+          ),
+          MeetingOption(
+            text: 'Turn Off My Video',
+            isMute: isVideoMuted,
+            onChange: onVideoMuted,
+          ),
         ]),
     );
   }
+  onAudioMuted(bool val) {
+    setState(() {
+      isAudioMuted = val;
+    });
+  }
+
+  onVideoMuted(bool val) {
+    setState(() {
+      isVideoMuted = val;
+    });
+  }
 }
+
+
