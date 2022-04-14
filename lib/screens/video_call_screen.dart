@@ -20,6 +20,10 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
       text: _authMethods.user.displayName,
     );
     super.initState();
+
+  }
+  _joinMeeting(){
+
   }
   @override
   Widget build(BuildContext context) {
@@ -64,6 +68,19 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 border: InputBorder.none,
                 hintText: 'Name',
                 contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          InkWell(
+            onTap: _joinMeeting,
+            child: const Padding(
+              padding: EdgeInsets.all(8),
+              child: Text(
+                'Join',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ),
           ),
