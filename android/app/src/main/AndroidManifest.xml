@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.videocalling_flutter">
+            package="com.example.videocalling_flutter"
+          xmlns:tools="http://schemas.android.com/tools">
+
    <application
-        android:label="videocalling_flutter"
+           tools:replace="android:label"
+           android:label="videocalling_flutter"
         android:name="${applicationName}"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
