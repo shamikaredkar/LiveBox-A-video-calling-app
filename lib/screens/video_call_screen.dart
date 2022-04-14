@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videocalling_finalproject/resources/auth_methods.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
 
 class VideoCallScreen extends StatefulWidget {
@@ -9,11 +10,15 @@ class VideoCallScreen extends StatefulWidget {
 }
 
 class _VideoCallScreenState extends State<VideoCallScreen> {
+  final AuthMethods _authMethods = AuthMethods();
   late TextEditingController meetingIdController;
-
+  late TextEditingController nameController;
   @override
   void initState() {
     meetingIdController = TextEditingController();
+    nameController = TextEditingController(
+      text: _authMethods.user.displayName,
+    );
     super.initState();
   }
   @override
@@ -45,7 +50,23 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
               contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
             ),
           ),
-          )
+          ),
+          SizedBox(
+            height: 60,
+            child: TextField(
+              controller: nameController,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                fillColor: secondaryBackgroundColor,
+                filled: true,
+                border: InputBorder.none,
+                hintText: 'Name',
+                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+              ),
+            ),
+          ),
         ]),
     );
   }
