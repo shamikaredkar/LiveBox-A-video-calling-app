@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:videocalling_finalproject/resources/auth_methods.dart';
 import 'package:videocalling_finalproject/screens/home_screen.dart';
 import 'package:videocalling_finalproject/screens/login_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
@@ -31,7 +32,21 @@ class _MyAppState extends State<MyApp> {
           '/login' : (context) => const LoginScreen(),
           '/home' : (context) => const HomeScreen(),
         },
-        home: const LoginScreen(),
+        home: StreamBuilder(
+          stream : AuthMethods().authChanges,
+          builder:(context,snapshot){
+            if(snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                  child: CircularProgressIndicator(),
+                );
+            }
+            if(snapshot.hasData){
+              return const HomeScreen();
+            }
+            return const LoginScreen();
+          },
+
+        ),
     );
   }
 
