@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:videocalling_finalproject/resources/auth_methods.dart';
 import 'package:videocalling_finalproject/screens/home_screen.dart';
 import 'package:videocalling_finalproject/screens/login_screen.dart';
+import 'package:videocalling_finalproject/screens/video_call_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
 
 
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
         routes:{
           '/login' : (context) => const LoginScreen(),
           '/home' : (context) => const HomeScreen(),
+          '/video-call' : (context) => const VideoCallScreen(),
         },
         home: StreamBuilder(
           stream : AuthMethods().authChanges,
