@@ -7,38 +7,39 @@ class AuthMethods{
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  signInWithGoogle(BuildContext context) async{
+  Future<bool> signInWithGoogle(BuildContext context) async {
     bool res = false;
-    try{
+    try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-      final credentials = GoogleAuthProvider.credential(
+      final GoogleSignInAuthentication? googleAuth =
+      await googleUser?.authentication;
+
+      final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
-      UserCredential userCredential = await _auth.signInWithCredential(credentials);
+
+      UserCredential userCredential =
+      await _auth.signInWithCredential(credential);
 
       User? user = userCredential.user;
 
-      if(user!=null){
-        //if user has just logged in to the application
-        if(userCredential.additionalUserInfo!.isNewUser){
-          //create new collection with following document in firestore
+      if (user != null) {
+        if (userCredential.additionalUserInfo!.isNewUser) {
           await _firestore.collection('users').doc(user.uid).set({
-            'username' : user.displayName,
-            'uid' : user.uid,
-            'profilePhoto' : user.photoURL
+            'username': user.displayName,
+            'uid': user.uid,
+            'profilePhoto': user.photoURL,
           });
         }
-      res = true;
+        res = true;
       }
+    } on FirebaseAuthException catch (e) {
+      showSnackBar(context, e.message!);
+      res = false;
     }
-     catch(e){
-        debugPrint(e.toString());
-      // showSnackBar(context,e.message!);
-        res = false;
-    }
+    return res;
   }
 
 }
