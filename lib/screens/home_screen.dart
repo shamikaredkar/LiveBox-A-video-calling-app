@@ -49,6 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
+          const Expanded(child: Center(child: Text('Create/Host Meetings with just a click', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          ),
+          ),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
