@@ -25,6 +25,11 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("Meet & Chat"),
         centerTitle: true,
       ),
+      body: Column(
+        children: [
+
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: footerColor,
         onTap: onPageChanged,
