@@ -54,6 +54,10 @@
     			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
     			<string>com.googleusercontent.apps.591272776906-qilf5mc0vi8vg2jjbvke1uatrv2hb695</string>
     		</array>
+    		<key>NSCameraUsageDescription</key>
+            <string>$(PRODUCT_NAME) MyApp needs access to your camera for meetings.</string>
+            <key>NSMicrophoneUsageDescription</key>
+            <string>$(PRODUCT_NAME) MyApp needs access to your microphone for meetings.</string>
     	</dict>
     </array>
 
