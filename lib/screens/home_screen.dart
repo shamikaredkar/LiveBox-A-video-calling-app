@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:videocalling_finalproject/screens/history_meetings_screen.dart';
+import 'package:videocalling_finalproject/screens/history_meeting_screen.dart';
+import 'package:videocalling_finalproject/screens/meetings_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
 import 'package:videocalling_finalproject/widgets/home_meeting_button.dart';
 
@@ -19,7 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> pages = [
+    const MeetingScreen(),
     const HistoryMeetingScreen(),
+    const Text('Contacts'),
+    const Text('Settings')
   ];
 
   @override

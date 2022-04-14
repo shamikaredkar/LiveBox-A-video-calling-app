@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../widgets/home_meeting_button.dart';
 
-class HistoryMeetingScreen extends StatelessWidget {
-  const HistoryMeetingScreen({Key? key}) : super(key: key);
+class MeetingScreen extends StatelessWidget {
+  const MeetingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
