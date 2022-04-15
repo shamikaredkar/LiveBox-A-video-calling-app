@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
-import 'package:videocalling_finalproject/resources/auth_methods.dart';
-import 'package:videocalling_finalproject/resources/jitsi_meet_methods.dart';
-import 'package:videocalling_finalproject/utils/colors.dart';
 
+
+import '../resources/auth_methods.dart';
+import '../resources/jitsi_meet_methods.dart';
+import '../utils/colors.dart';
 import '../widgets/meeting_option.dart';
 
 class VideoCallScreen extends StatefulWidget {
   const VideoCallScreen({Key? key}) : super(key: key);
 
   @override
-  _VideoCallScreenState createState() => _VideoCallScreenState();
+  State<VideoCallScreen> createState() => _VideoCallScreenState();
 }
 
 class _VideoCallScreenState extends State<VideoCallScreen> {
@@ -28,7 +29,6 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
       text: _authMethods.user.displayName,
     );
     super.initState();
-
   }
 
   @override
@@ -47,15 +47,18 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
       username: nameController.text,
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: backgroundColor,
-        title: const Text("Join a Meeting", style:  TextStyle(
-          fontSize: 18,
-        ),
+        title: const Text(
+          'Join a Meeting',
+          style: TextStyle(
+            fontSize: 18,
+          ),
         ),
         centerTitle: true,
       ),
@@ -63,19 +66,19 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
         children: [
           SizedBox(
             height: 60,
-      child:TextField(
-            controller: meetingIdController,
-            maxLines: 1,
-            textAlign: TextAlign.center,
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              fillColor: secondaryBackgroundColor,
-              filled: true,
-              border: InputBorder.none,
-              hintText: 'Room ID',
-              contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+            child: TextField(
+              controller: meetingIdController,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                fillColor: secondaryBackgroundColor,
+                filled: true,
+                border: InputBorder.none,
+                hintText: 'Room ID',
+                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+              ),
             ),
-          ),
           ),
           SizedBox(
             height: 60,
@@ -117,9 +120,11 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
             isMute: isVideoMuted,
             onChange: onVideoMuted,
           ),
-        ]),
+        ],
+      ),
     );
   }
+
   onAudioMuted(bool val) {
     setState(() {
       isAudioMuted = val;
@@ -132,5 +137,3 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
     });
   }
 }
-
-
