@@ -41,6 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
         currentIndex: _page,
+        type: BottomNavigationBarType.fixed,
+        unselectedFontSize: 14,
         items:const [
           BottomNavigationBarItem(icon: Icon(Icons.comment_bank),
             label: "Meet & Chat"
