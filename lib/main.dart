@@ -6,7 +6,6 @@ import 'package:videocalling_finalproject/screens/login_screen.dart';
 import 'package:videocalling_finalproject/screens/video_call_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -51,7 +50,5 @@ class _MyAppState extends State<MyApp> {
         ),
     );
   }
-
-
 }
 

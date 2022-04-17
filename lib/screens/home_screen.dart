@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:videocalling_finalproject/resources/auth_methods.dart';
 import 'package:videocalling_finalproject/screens/history_meeting_screen.dart';
 import 'package:videocalling_finalproject/screens/meetings_screen.dart';
 import 'package:videocalling_finalproject/utils/colors.dart';
+import 'package:videocalling_finalproject/widgets/custom_button.dart';
 import 'package:videocalling_finalproject/widgets/home_meeting_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MeetingScreen(),
     const HistoryMeetingScreen(),
     const Text('Contacts'),
-    const Text('Settings')
+    CustomButton(text: "Log Out", onPressed: () => AuthMethods().signOut()),
   ];
 
   @override
