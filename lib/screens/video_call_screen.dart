@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
-
-
 import '../resources/auth_methods.dart';
 import '../resources/jitsi_meet_methods.dart';
 import '../utils/colors.dart';
