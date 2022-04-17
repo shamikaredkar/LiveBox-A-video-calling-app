@@ -29,7 +29,7 @@ class MeetingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             HomeMeetingButton(
-              onPressed: createNewMeeting,
+              onPressed:createNewMeeting,
               text: 'New Meeting',
               icon: Icons.videocam,
             ),
